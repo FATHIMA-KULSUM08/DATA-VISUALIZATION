@@ -1,1 +1,44 @@
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
+# Generate a synthetic Student Performance Dataset
+np.random.seed(42)
+data = {
+    'study_time': np.random.choice([1, 2, 3, 4], size=100),
+    'absences': np.random.randint(0, 20, size=100),
+    'grade': np.random.randint(50, 100, size=100)
+}
+df = pd.DataFrame(data)
+
+# Display the first few rows of the dataset
+print("Dataset Preview:")
+print(df.head())
+
+# Visualizations
+
+# 1. Bar Chart for Average Grades by Study Time
+plt.figure(figsize=(10, 6))
+sns.barplot(x='study_time', y='grade', data=df, estimator='mean', palette='viridis')
+plt.title('Average Grades by Study Time')
+plt.xlabel('Study Time (1-4)')
+plt.ylabel('Average Grade')
+plt.show()
+
+# 2. Scatter Plot for Grades vs. Absences
+plt.figure(figsize=(10, 6))
+sns.scatterplot(x='absences', y='grade', data=df, color='blue')
+plt.title('Grades vs. Absences')
+plt.xlabel('Number of Absences')
+plt.ylabel('Grade')
+plt.axhline(y=df['grade'].mean(), color='r', linestyle='--', label='Average Grade')
+plt.legend()
+plt.show()
+
+# 3. Heatmap for Correlation
+correlation = df.corr()
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation, annot=True, cmap='coolwarm', fmt=".2f", linewidths=0.5)
+plt.title('Correlation Heatmap')
+plt.show()
