@@ -1,1 +1,9 @@
-# DATA-VISUALIZATION
+# DATA-VISUALIZATION USING PYTHON
+Tools/Technologies: Python, Pandas, Seaborn, Matplotlib
+Dataset: Synthetic Student Performance Dataset
+Analyzed a synthetic dataset on grades, study habits, and absences to gain insights into academic success.
+Created visualizations:
+Bar chart for average grades by study time.
+Scatter plot for grades vs. absences.
+Heatmap for inter-variable correlations.
+Enhanced understanding of factors influencing academic performance.
