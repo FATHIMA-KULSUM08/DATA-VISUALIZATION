@@ -3,7 +3,6 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Generate a synthetic Student Performance Dataset
 np.random.seed(42)
 data = {
     'study_time': np.random.choice([1, 2, 3, 4], size=100),
@@ -11,12 +10,8 @@ data = {
     'grade': np.random.randint(50, 100, size=100)
 }
 df = pd.DataFrame(data)
-
-# Display the first few rows of the dataset
 print("Dataset Preview:")
 print(df.head())
-
-# Visualizations
 
 # 1. Bar Chart for Average Grades by Study Time
 plt.figure(figsize=(10, 6))
